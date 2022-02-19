@@ -52,7 +52,11 @@ export default {
         
      },
      mounted(){
-     this.$store.state.ruta= this.$router.currentRoute._rawValue.name;
+     this.$store.state.rutas.dashboard=false;
+     this.$store.state.rutas.prestamos=false;
+     this.$store.state.rutas.libros=false;
+     this.$store.state.rutas.usuarios=true;
+
      console.log(this.thead);
      
     },

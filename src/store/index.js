@@ -4,7 +4,13 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     'ruta':'',
-    auth:null
+    auth:null,
+    rutas:{
+      'dashboard':false,
+      'prestamos':false,
+      'libros':false,
+      'usuarios':false,
+    }
   },
   mutations: {
     setAuth(state,auth){

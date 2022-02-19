@@ -51,6 +51,10 @@ export default {
         
      },
      mounted(){
+     this.$store.state.rutas.dashboard=false;
+     this.$store.state.rutas.prestamos=true;
+     this.$store.state.rutas.libros=false;
+     this.$store.state.rutas.usuarios=false; 
      this.$store.state.ruta= this.$router.currentRoute._rawValue.name;
      console.log(this.thead);
      

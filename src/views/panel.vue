@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
       <ul class="navbar-nav" >
         <li class="nav-item">
-          <router-link   v-bind:class="'nav-link '+ active('dashboard')" to="/panel/dashboard">
+          <router-link   v-bind:class="'nav-link '+ dashboard" to="/panel/dashboard">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -32,7 +32,7 @@
           </router-link>
         </li>
           <li class="nav-item">
-          <router-link v-bind:class="'nav-link '+ active('prestamos')"  to="/panel/prestamos">
+          <router-link v-bind:class="'nav-link '+ prestamos"  to="/panel/prestamos">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -52,7 +52,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link v-bind:class="'nav-link '+ active('libros')"  to="/panel/libros">
+          <router-link v-bind:class="'nav-link ' +libros "  to="/panel/libros">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -72,7 +72,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link v-bind:class="'nav-link '+ active('usuarios')" to="/panel/usuarios">
+          <router-link v-bind:class="'nav-link '+ usuarios" to="/panel/usuarios">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -435,9 +435,34 @@ export default {
       ruta(){
       return this.$store.state.ruta;
       },
+      libros(){
+        if(this.$store.state.rutas.libros){
+          return "active"
+        }
+        return ""
 
-     
+      },    
+      usuarios(){
+        if(this.$store.state.rutas.usuarios){
+          return "active"
+        }
+        return ""
 
+      }, 
+    prestamos(){
+        if(this.$store.state.rutas.prestamos){
+          return "active"
+        }
+        return ""
+
+      },
+       dashboard(){
+        if(this.$store.state.rutas.dashboard){
+          return "active"
+        }
+        return ""
+
+      },
     },
     mounted(){
       let route= this.$router.currentRoute._rawValue.name;
@@ -446,18 +471,12 @@ export default {
      console.log(this.ruta);
     },
     methods:{
-      dashboard(){
-     console.log("click");
-    },
+    
     logout(){
         localStorage.removeItem('auth');
         location.reload();
     },
-     active(ruta_link){
-       if(ruta_link==this.ruta){
-         return 'active'
-       }
-       return ''
+     active(){
      }
     }
 }

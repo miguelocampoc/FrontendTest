@@ -54,7 +54,10 @@ export default {
     },
     mounted(){
                 this.$store.state.ruta= "usuarios";
-
+    this.$store.state.rutas.dashboard=false;
+     this.$store.state.rutas.prestamos=false;
+     this.$store.state.rutas.libros=false;
+     this.$store.state.rutas.usuarios=true; 
     },
     methods: {
         registrarUsuario(){

@@ -106,6 +106,10 @@ export default {
         }, 50);
     },
     mounted(){
+       this.$store.state.rutas.dashboard=false;
+       this.$store.state.rutas.prestamos=true;
+       this.$store.state.rutas.libros=false;
+       this.$store.state.rutas.usuarios=false; 
        this.ListarUsuarios();
         this.ListarLibros();
         this.GetDataById();

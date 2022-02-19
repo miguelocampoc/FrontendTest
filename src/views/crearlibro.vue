@@ -68,7 +68,10 @@ export default {
 
        //console.log(this.$route.params.id)
         this.$store.state.ruta= "libros";
-
+    this.$store.state.rutas.dashboard=false;
+     this.$store.state.rutas.prestamos=false;
+     this.$store.state.rutas.libros=true;
+     this.$store.state.rutas.usuarios=false; 
       // this.userdata();
     },
     created(){
