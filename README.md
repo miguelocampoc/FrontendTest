@@ -1,24 +1,8 @@
-# tienda
+Para ejecutar el proyecto front end vue 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Descargar y extraer el archivo zip
+2. Entrar en el directorio del proyecto y ejecutar las siguientes lineas en la consola de comandos
+    1.   npm install
+    2.   npm run serve
+    
+Nota: Es necesario tener instalado nodejs y npm
