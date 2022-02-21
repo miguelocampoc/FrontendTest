@@ -10,6 +10,7 @@ export default createStore({
       'prestamos':false,
       'libros':false,
       'usuarios':false,
+      'reservar':false,
     }
   },
   mutations: {

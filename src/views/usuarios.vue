@@ -56,7 +56,7 @@ export default {
      this.$store.state.rutas.prestamos=false;
      this.$store.state.rutas.libros=false;
      this.$store.state.rutas.usuarios=true;
-
+     this.$store.state.rutas.reservar=false;
      console.log(this.thead);
      
     },

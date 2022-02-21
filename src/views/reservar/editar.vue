@@ -5,7 +5,7 @@
                    />
     <div id="crear" class="ml-3">
           <div v-if="success" class="alert alert-light alert-dismissible fade show" role="alert">
-             El prestamo del libro fue editado exitosamente
+             La reserva del libro fue editado exitosamente
              <button @click="issucess" style="background-color:white" type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
           </div> 
         <div class="card">
@@ -34,7 +34,7 @@
                     </div>
                     </div>
                     <div class="card-footer">
-                      <button @click="EditarPrestamo()" class="btn btn-primary">Editar Prestamo</button>
+                      <button @click="EditarPrestamo()" class="btn btn-primary">Editar Reserva</button>
                     </div>
              </div>
              <br>
@@ -107,10 +107,10 @@ export default {
     },
     mounted(){
        this.$store.state.rutas.dashboard=false;
-       this.$store.state.rutas.prestamos=true;
+       this.$store.state.rutas.prestamos=false;
        this.$store.state.rutas.libros=false;
-       this.$store.state.rutas.usuarios=false; 
-       this.$store.state.rutas.reservar=false;
+       this.$store.state.rutas.usuarios=false;
+       this.$store.state.rutas.reservar=true;
        this.ListarUsuarios();
         this.ListarLibros();
         this.GetDataById();

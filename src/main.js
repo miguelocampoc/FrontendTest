@@ -7,7 +7,7 @@ import VueAxios from 'vue-axios'
 import VueLoading from 'vue-loading-overlay';
 import Vue3Progress from "vue3-progress";
 
-axios.defaults.baseURL="https://cursos-prueba.tk";
+//axios.defaults.baseURL="https://cursos-prueba.tk";
 
 const options = {
     position: "fixed",

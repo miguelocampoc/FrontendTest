@@ -77,7 +77,24 @@ const routes = [
           component: () => import(/* webpackChunkName: "about" */ '../views/prestamos/editar.vue'),
   
         },
-      
+        {
+          path:'reservar',
+          name:'Mis Reservas de libros',
+          component: () => import(/* webpackChunkName: "about" */ '../views/reservar/listar.vue')
+    
+          },
+          {
+            path:'reservar/crear',
+            name:'Reservar Libro',
+            component: () => import(/* webpackChunkName: "about" */ '../views/reservar/crear.vue'),
+        
+          },
+          {
+            path:'reservar/editar/:id',
+            name:'Editar Reserva Libro',
+            component: () => import(/* webpackChunkName: "about" */ '../views/reservar/editar.vue'),
+    
+          },
     ]
   },
 

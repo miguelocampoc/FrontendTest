@@ -22,6 +22,8 @@
                     <input type="email" v-model="dataform.email" class="form-control mb-4" placeholder="Ingrese el email">
                     <p>Direccion</p>
                     <input type="text" v-model="dataform.direccion"  class="form-control mb-4" placeholder="Ingrese la direccion">
+                    <p>Password</p>
+                    <input type="password" v-model="dataform.password"  class="form-control mb-4" placeholder="Password">
                 </div>
                   <div class="col-xl-6">
                    <p>Apellido</p>
@@ -58,7 +60,7 @@ export default {
             contacto:"",
             direccion:"",
             cedula:"",
-
+            password:""
             },
             success:false,
             UserData:[]
@@ -71,6 +73,7 @@ export default {
      this.$store.state.rutas.dashboard=false;
      this.$store.state.rutas.prestamos=false;
      this.$store.state.rutas.libros=false;
+        this.$store.state.rutas.reservar=false;
      this.$store.state.rutas.usuarios=true; 
        this.userdata();
     },
@@ -107,6 +110,7 @@ export default {
                       this.dataform.email= response.data.email;
                       this.dataform.direccion= response.data.direccion;
                       this.dataform.cedula= response.data.cedula;
+                      
                 }).catch((err)=>{
                        console.log(err);
 

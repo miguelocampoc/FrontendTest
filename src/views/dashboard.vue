@@ -36,6 +36,16 @@
                    </div>
                  </div>
                </div>
+               <div class="row">
+                  <div class="card border">
+                   <div class="card-header border-bottom ">
+                     Reservar  libro
+                   </div>
+                   <div class="card-body ">
+                        <router-link   to="/panel/reservar/crear">Reservar libro aqui</router-link>
+                   </div>
+                 </div>
+               </div>
         </div>
     
 </template>
@@ -46,6 +56,7 @@
      this.$store.state.rutas.prestamos=false;
      this.$store.state.rutas.libros=false;
      this.$store.state.rutas.usuarios=false;
+      this.$store.state.rutas.reservar=false;
 
        }
     }

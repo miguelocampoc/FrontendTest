@@ -72,6 +72,8 @@ export default {
      this.$store.state.rutas.prestamos=false;
      this.$store.state.rutas.libros=true;
      this.$store.state.rutas.usuarios=false; 
+     this.$store.state.rutas.reservar=false;
+
       // this.userdata();
     },
     created(){

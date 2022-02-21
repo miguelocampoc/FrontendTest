@@ -60,9 +60,13 @@
                    No encontramos registros con las credenciales*
                   </p>
                 </div>
-                <div class="row text-center ">
+                <div style="display:none" class="row text-center ">
                   <!-- <router-link  to="/register" >Registrate aqui</router-link> !-->
                   {{auth}}
+                  </div>
+                  <div class="row justify-content-center">
+                    Usuario: userprueba@test.com
+                    Password: 12345678
                   </div>
               </div>
             </div>
@@ -112,6 +116,19 @@ export default {
   },
   methods:{
     ...mapMutations(['setAuth']),
+    login2(){
+        this.axios.post("http://127.0.0.1:8000/api/autenticacion",{
+           username:this.dataformlogin.email,
+             password:this.dataformlogin.password 
+        }
+        ).then((response)=>{
+           console.log(response.data);
+        }).catch((err)=>{
+           console.log(err);
+
+        })
+    },
+        
       login(){
      
       return new Promise((resolve,reject)=>{
@@ -134,14 +151,14 @@ export default {
               reject(err);
             })
             */
-           this.axios.post('/api/login',{
+           this.axios.post('http://127.0.0.1:8000/api/autenticacion',{
              gran_type:"password",
              client_id:"956804e5-0b1b-4fea-a567-49df94c6ce0a",
              client_secret:"4K56dLk41j1g1TVWfwbOuMrqTppwtQfWlBR9KKuF",
              username:this.dataformlogin.email,
              password:this.dataformlogin.password
 
-           }).then(response=>{
+           }).then((response)=>{
              console.log(response.data);
              this.setAuth(response.data);
              localStorage.setItem('auth',JSON.stringify(response.data))
